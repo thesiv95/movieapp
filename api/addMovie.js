@@ -1,8 +1,8 @@
 import { escape } from 'mysql';
+import connection from '../config.js';
 
 const addMovie = (req, res) => {
     let currentDate = new Date().toISOString().slice(0,19).replace('T', ' ');
-    console.log(currentDate);
     let imdbUrlCode = req.query.imdb_url.slice(27,36);
     let query = `INSERT INTO movies (name, imdb_url, rating_admin, rating_user, user_likes, timestamp) VALUES (
         ${escape(req.query.name)},

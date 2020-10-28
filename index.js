@@ -4,10 +4,9 @@ import cors from 'cors';
 
 // MySQL server configuration
 import connection from './config.js';
-// TODO: fix db правильно авто инкремент
 
 // API
-import {allData, addMovie, updateMovie, deleteMovie, updateUserLikes, updateUserStatus} from './api/index.js';
+import {allData, addMovie, updateMovie, deleteMovie, updateUserRating, updateUserStatus} from './api/index.js';
 
 // node.js web server initialization
 let app = express();
@@ -24,7 +23,7 @@ app.get('/allData', allData);
 app.post('/addMovie', addMovie);
 app.post('/updateMovie', updateMovie);
 app.post('/deleteMovie', deleteMovie);
-app.post('/updateUserLikes', updateUserLikes);
+app.post('/updateUserRating', updateUserRating);
 app.post('/updateUserStatus', updateUserStatus);
 
 // server start point

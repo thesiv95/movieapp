@@ -1,3 +1,5 @@
+import connection from '../config.js';
+
 const allData = (req, res) => {
     let query = 'SELECT * from movies';
     connection.query(query, (error, result) => {
