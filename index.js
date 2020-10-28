@@ -1,4 +1,5 @@
 // libs
+import path from "path";
 import express from 'express';
 import cors from 'cors';
 
@@ -16,6 +17,16 @@ app.use(cors());
 connection.connect((err) => {
     if (err) throw err;
     console.log("DB connected");
+});
+
+// HTML pages
+const __dirname = path.resolve();
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(__dirname, "admin", "index.html"));
+});
+
+app.get("/public", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // queries
