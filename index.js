@@ -2,6 +2,7 @@
 import path from "path";
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 
 // MySQL server configuration
 import connection from './config.js';
@@ -12,6 +13,7 @@ import {allData, addMovie, updateMovie, deleteMovie, updateUserRating, updateUse
 // node.js web server initialization
 let app = express();
 app.use(cors());
+app.use(helmet());
  
 // connection to mySQL database
 connection.connect((err) => {
