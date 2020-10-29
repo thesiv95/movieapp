@@ -1,13 +1,13 @@
-import React from 'react';
+import {Component} from 'react';
 
-export default class SortBy extends React.Component {
+export default class SortBy extends Component {
     render(){
         return (
-            <div class="row header">
-                <div class="col-md-2 col-sm-5">
+            <div className="row header">
+                <div className="col-md-2 col-sm-5">
                     <h3>Sorted by</h3>
                 </div>
-                <div class="col-md-10 col-sm-5">
+                <div className="col-md-10 col-sm-5">
                     <select name="sort-by" id="sort-by">
                         <option value="name">Name</option>
                         <option value="rating">Rating</option>

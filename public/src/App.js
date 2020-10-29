@@ -1,20 +1,33 @@
+import {Component} from 'react';
 import './App.css';
-import Movie from './components/Movie';
-import SortBy from './components/SortBy';
 
-function App() {
-  return (
-    <div class="container">
-        <SortBy />
-        <div class="content">
-            
-            <Movie />
-            <Movie />
-            <Movie />
-        
-        </div>
+import axios from 'axios';
+import Loader from './components/Loader';
+import MainPage from './components/MainPage';
+export default class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      data: null
+    }
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:9000/allData')
+      .then(response => this.setState({
+        data: response.data
+      }));
+  }
+
+  render(){
+    return (
+      <div className="container">
+        {this.state.data ? <MainPage data={this.state.data} /> : <Loader />}
       </div>
-  );
+    );
+  }
+  
 }
 
-export default App;
+

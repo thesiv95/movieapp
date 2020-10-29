@@ -1,30 +1,32 @@
-import React from 'react';
+import {Component} from 'react';
 
-class Movie extends React.Component {
+export default class Movie extends Component {
+
     render(){
         return (
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-3">
-                    <h4>Movie name</h4>
+            <div className="row">
+                <input type="hidden" name='timestamp' value={this.props.timestamp} />
+                <div className="col-md-3 col-sm-3 col-xs-3">
+                    <h4>{this.props.name}</h4>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3">
+                <div className="col-md-3 col-sm-3 col-xs-3">
                     <p>Our rating</p>
-                    <p><strong>5</strong></p>
+                    <p><strong>{this.props.ratingAdmin}</strong></p>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3">
+                <div className="col-md-3 col-sm-3 col-xs-3">
                     <p><strong>4</strong></p>
                     <p>people</p>
                     <p>like</p>
-                    <p><em>movie name</em></p>
+                    <p><em>{this.props.name}</em></p>
                     <p>
-                        <span class="thumbsup">👍</span>
-                        <span class="tick">✔️</span>
+                        <span className={`thumbsup ${this.props.userStatus ? 'hide' : ''}`}>👍</span>
+                        <span className={`tick ${this.props.userStatus ? 'hide' : ''}`}>✔️</span>
                     </p>
-                    <p class="content__thanks">Thanks! We got your vote.</p>
+                    <p className="content__thanks">Thanks! We got your vote.</p>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3">
+                <div className="col-md-3 col-sm-3 col-xs-3">
                     <h4>
-                        <a href="https://www.imdb.com/title/tt0371746/">Visit IMDb page</a>
+                        <a href={`https://www.imdb.com/title/${this.props.imdbUrl}`}>Visit IMDb page</a>
                     </h4>
                 </div>
             </div>
@@ -32,4 +34,3 @@ class Movie extends React.Component {
     }
 }
 
-export default Movie;
