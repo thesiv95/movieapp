@@ -22,20 +22,20 @@ export default class Movie extends Component {
 
     render(){
         return (
-            <div className="row">
+            <div className="row movie">
                 <input type="hidden" name='timestamp' value={this.props.timestamp} />
                 <div className="col-md-3 col-sm-3 col-xs-3">
-                    <h4>{this.props.name}</h4>
+                    <h4 className="movie__name">{this.props.name}</h4>
                 </div>
                 <div className="col-md-3 col-sm-3 col-xs-3">
-                    <p>Our rating</p>
-                    <p><strong>{this.props.ratingAdmin}</strong></p>
+                    <p className="movie__adminrating-title">Our rating</p>
+                    <p className="movie__adminrating-value">{this.props.ratingAdmin}</p>
                 </div>
                 <div className="col-md-3 col-sm-3 col-xs-3">
-                    <p><strong>4</strong></p>
+                    <p className="movie__userrating-value">4</p>
                     <p>people</p>
                     <p>like</p>
-                    <p><em>{this.props.name}</em></p>
+                    <p className="movie__userrating-title">{this.props.name}</p>
                     <p onClick={this.vote && this.props.id ? this.vote(this.props.id) : ''}>
                         <span className={`thumbsup ${this.props.userStatus ? 'hidden' : ''}`}>👍</span>
                         <span className={`tick ${this.props.userStatus ? '' : 'hidden'}`}>✔️</span>
