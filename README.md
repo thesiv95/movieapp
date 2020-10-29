@@ -15,5 +15,7 @@ I've used _yarn_ as the node package manager.
 Thank you for the task!
 
 I think the task is quite **typical** (what 90% of devs usually have to do). Nevertheless, it is challenging and it could improve your skills in FullStack applications!
-I would rather give 3-4 days (or ~14 hours) to do this task 100% completed (because of bunch of issues in modern frameworks, etc).
+I would rather give 3-4 days\* (or ~14 hours) to do this task 100% completed (because of bunch of issues in modern frameworks, etc).
 Some **strange** and **unobvious** things are shown in comments. But I am ready to explain them!
+
+\* _when I say "day", I mean the amount of time that average person could spend in one twenty-four hours_

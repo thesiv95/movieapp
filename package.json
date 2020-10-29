@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Ilya Soloveychik <dj.active.17@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "git": "https://github.com/thesiv95/movieapp.git"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -12,10 +15,15 @@
   },
   "type": "module",
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "concurrently \"yarn run server:start\" \"yarn run client:start\"",
+    "start:dev": "concurrently \"yarn run server:dev\" \"yarn run client:start\"",
+    "client:start": "yarn --cwd public start",
+    "client:build": "yarn --cwd public build",
+    "server:start": "node index.js",
+    "server:dev": "nodemon index.js"
   }
 }
