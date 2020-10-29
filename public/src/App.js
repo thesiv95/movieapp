@@ -13,6 +13,7 @@ export default class App extends Component {
     }
   }
 
+
   componentDidMount(){
     axios.get('http://localhost:9000/allData')
       .then(response => this.setState({
