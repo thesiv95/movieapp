@@ -11,10 +11,12 @@ import connection from './config.js';
 import {allData, addMovie, updateMovie, deleteMovie, updateUserRating, updateUserStatus} from './api/index.js';
 
 // node.js web server initialization
+const __dirname = path.resolve();
 let app = express();
 app.use(cors());
 app.use(helmet());
- 
+app.use( express.static( __dirname + '/admin' ));
+app.use( express.static( __dirname + '/public' ));
 // connection to mySQL database
 connection.connect((err) => {
     if (err) throw err;
@@ -22,7 +24,7 @@ connection.connect((err) => {
 });
 
 // HTML pages
-const __dirname = path.resolve();
+
 app.get("/admin", (req, res) => {
     res.sendFile(path.join(__dirname, "admin", "index.html"));
 });
