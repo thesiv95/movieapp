@@ -1,6 +1,7 @@
 import {Component} from 'react';
 
 export default class SortBy extends Component {
+
     render(){
         return (
             <div className="row header">
