@@ -30,7 +30,7 @@ app.get("/admin", (req, res) => {
 });
 
 app.get("/public", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.redirect('http://localhost:3000'); // react app
 });
 
 // queries
